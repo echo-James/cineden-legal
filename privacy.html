@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CineDen Privacy Policy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --ground:      #FBFAFD;
+    --surface:     #F2F0F7;
+    --surface-2:   #E8E4F1;
+    --ink:         #1A1726;
+    --ink-soft:    #4A4459;
+    --muted:       #6B6580;
+    --rule:        #DDD8E8;
+    --accent:      #5B3FA8;
+    --accent-soft: #EDE7F9;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground:      #16181D;
+      --surface:     #1E212A;
+      --surface-2:   #272B36;
+      --ink:         #EDEBF2;
+      --ink-soft:    #C3BFD1;
+      --muted:       #948EA6;
+      --rule:        #333846;
+      --accent:      #A78BFA;
+      --accent-soft: #241F38;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground:      #16181D;
+    --surface:     #1E212A;
+    --surface-2:   #272B36;
+    --ink:         #EDEBF2;
+    --ink-soft:    #C3BFD1;
+    --muted:       #948EA6;
+    --rule:        #333846;
+    --accent:      #A78BFA;
+    --accent-soft: #241F38;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    padding-bottom: 2.25rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .eyebrow {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: clamp(2.1rem, 6vw, 3rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .dateline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  /* ---- Sections ---- */
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0;
+    color: var(--ink);
+  }
+
+  p { margin: 0; }
+
+  a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ul { margin: 0; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  code, .mono {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.875em;
+  }
+
+  code {
+    background: var(--surface);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+
+  /* ---- The lede: a plain-language summary ---- */
+
+  .lede {
+    font-size: 1.1875rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  .summary {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .summary h2 { font-size: 1.0625rem; }
+
+  /* ---- The strong claim gets its own treatment ---- */
+
+  .claim {
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .claim-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.625rem;
+  }
+
+  .claim-list li {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr;
+    gap: 0.625rem;
+    align-items: start;
+  }
+
+  .claim-list li::before {
+    content: "—";
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  /* ---- Storage table ---- */
+
+  .table-wrap { overflow-x: auto; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    min-width: 34rem;
+  }
+
+  caption {
+    text-align: left;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 0.75rem;
+  }
+
+  th {
+    text-align: left;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 0.875rem 0.5rem 0;
+    border-bottom: 1px solid var(--ink);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 0.75rem 0.875rem 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  td:first-child {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8125rem;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  /* ---- Destination blocks ---- */
+
+  .destinations {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .destination {
+    background: var(--surface);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .destination .host {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .destination p { font-size: 0.9375rem; }
+
+  .sends {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .sends li {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    background: var(--ground);
+    border: 1px solid var(--rule);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.75rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">CineDen for Plex</div>
+    <h1>Privacy Policy</h1>
+    <div class="dateline">
+      <span>Effective 10 September 2026</span>
+      <span>Version 1.0</span>
+    </div>
+  </header>
+
+  <p class="lede">
+    CineDen is a video player for Meta Quest that connects to your own Plex server.
+    It has no account system, no server of its own, and no analytics. This policy
+    describes the only data it touches, all of which either stays on your headset or
+    goes to services you already use.
+  </p>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <p>
+      CineDen sends nothing about you to us, because there is no “us” to send it to.
+      We operate no servers and collect no data. Your Plex sign-in stays on your
+      headset. Your viewing goes directly between your headset and your own Plex
+      server. We never see your library, your history, or your account.
+    </p>
+  </div>
+
+  <section>
+    <h2>Who is responsible for this app</h2>
+    <p>
+      CineDen for Plex is published by CineDen Digital. Questions about this policy
+      can be sent to
+      <a href="mailto:CineDenDigitalGroup@gmail.com">CineDenDigitalGroup@gmail.com</a>.
+    </p>
+    <p>
+      CineDen is an independent application. It is not made by, endorsed by, or
+      affiliated with Plex Inc. or with Meta Platforms, Inc. Plex is a trademark of
+      Plex Inc., used here only to describe what this app connects to.
+    </p>
+  </section>
+
+  <section>
+    <h2>What stays on your headset</h2>
+    <p>
+      CineDen saves a small amount of information in its own private storage area on
+      the headset, which other apps on the device cannot read. None of it is
+      transmitted to us. It exists so the app remembers your setup between sessions.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <caption>Everything CineDen writes to the device</caption>
+        <thead>
+          <tr>
+            <th scope="col">Stored as</th>
+            <th scope="col">What it holds</th>
+            <th scope="col">Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AuthToken</td>
+            <td>The access token your Plex server issued to this app</td>
+            <td>So you do not sign in again on every launch</td>
+          </tr>
+          <tr>
+            <td>AccountToken</td>
+            <td>The access token for your Plex account</td>
+            <td>To list your servers and Plex Home profiles</td>
+          </tr>
+          <tr>
+            <td>ClientIdentifier</td>
+            <td>A random identifier the app generates on first run</td>
+            <td>Plex ties your sign-in to it, so it must stay stable</td>
+          </tr>
+          <tr>
+            <td>SelectedServer</td>
+            <td>The address and name of the server you chose</td>
+            <td>To reconnect to the same server next time</td>
+          </tr>
+          <tr>
+            <td>ActiveHomeUser</td>
+            <td>Which Plex Home profile you picked</td>
+            <td>To open in the right profile</td>
+          </tr>
+          <tr>
+            <td>Settings</td>
+            <td>Screen size, distance, curvature, colours, comfort options</td>
+            <td>To keep the room the way you arranged it</td>
+          </tr>
+          <tr>
+            <td>ControlsGuideSeen</td>
+            <td>Whether you have seen the controls guide</td>
+            <td>So it is shown once rather than every launch</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      The random identifier is generated on your device and is not derived from
+      anything about you or your hardware. It is not shared with anyone except your
+      own Plex server and the Plex sign-in service, which requires it.
+    </p>
+  </section>
+
+  <section>
+    <h2>What leaves your headset, and where it goes</h2>
+    <p>
+      CineDen talks to exactly two kinds of destination. Both are necessary for the
+      app to function, and neither is operated by us.
+    </p>
+
+    <div class="destinations">
+      <div class="destination">
+        <div class="host">plex.tv</div>
+        <p>
+          Plex's own service, used to sign you in, to discover which servers your
+          account can reach, and to list your Plex Home profiles. Sign-in uses Plex's
+          code-linking flow: the app shows you a short code, and you enter it at
+          <a href="https://plex.tv/link">plex.tv/link</a> in your own browser.
+          <strong>CineDen never sees or handles your Plex password.</strong>
+        </p>
+        <p>Each request identifies the app with:</p>
+        <ul class="sends">
+          <li>app name and version</li>
+          <li>the random client identifier</li>
+          <li>platform (“Android”)</li>
+          <li>operating system version</li>
+          <li>device type (“Meta Quest”)</li>
+          <li>your headset's device name</li>
+          <li>your Plex token, once signed in</li>
+        </ul>
+        <p>
+          Plex requires these so the app appears in the authorised-devices list on
+          your Plex account, where you can revoke it at any time. What Plex does with
+          this information is governed by
+          <a href="https://www.plex.tv/about/privacy-legal/">Plex's privacy policy</a>,
+          not this one.
+        </p>
+      </div>
+
+      <div class="destination">
+        <div class="host">Your own Plex server</div>
+        <p>
+          Whichever server you sign in to, at whatever address it has. CineDen
+          requests your library listings, cover artwork, and the video itself
+          directly from it, using the token above. On a home network this traffic
+          never leaves your network at all.
+        </p>
+        <p>
+          Your library contents, what you watch, and how far through it you are all
+          stay between your headset and your server. We are not in that path and
+          cannot see any of it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="claim">
+    <h2>What CineDen does not do</h2>
+    <p>
+      These are not settings you have to find and switch off. They are absent from
+      the app.
+    </p>
+    <ul class="claim-list">
+      <li>No analytics, usage tracking, or telemetry of any kind.</li>
+      <li>No crash or error reporting sent to us.</li>
+      <li>No advertising, and no advertising identifiers.</li>
+      <li>No account with us, because we operate no servers or databases.</li>
+      <li>No sale or sharing of personal information, because we hold none.</li>
+      <li>No microphone, camera, or photo access. The app requests none.</li>
+      <li>No collection of your Plex library, viewing history, or watch position.</li>
+      <li>No tracking across other apps or websites.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Passthrough and your surroundings</h2>
+    <p>
+      CineDen can show your real room behind the screen using the headset's
+      passthrough feature. This is rendered by the headset's own operating system.
+      The app receives no camera images, no depth data, and no information about your
+      surroundings, and it cannot record or transmit any of it.
+    </p>
+  </section>
+
+  <section>
+    <h2>Removing your data</h2>
+    <p>
+      Because nothing about you is held anywhere but your own headset and your own
+      Plex account, removing it is entirely in your hands.
+    </p>
+    <ul>
+      <li>
+        <strong>Sign out</strong> in CineDen's settings to clear the stored Plex
+        tokens from the headset.
+      </li>
+      <li>
+        <strong>Uninstall the app</strong> to remove everything in the table above.
+        Android deletes an app's private storage with the app.
+      </li>
+      <li>
+        <strong>Revoke access at Plex</strong> from the authorised devices list in
+        your Plex account settings, which invalidates the token regardless of what is
+        on the headset.
+      </li>
+    </ul>
+    <p>
+      There is no data export or deletion request to make of us, because we have
+      nothing to export or delete. If you would like that confirmed in writing, write
+      to the address above and we will say so.
+    </p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>
+      CineDen is not directed at children and collects no information from anyone,
+      including children. It plays whatever is in the Plex library you connect it to,
+      so the content it displays is determined by that server and by the Plex Home
+      profile you select. Plex's own parental controls and profile restrictions
+      continue to apply.
+    </p>
+  </section>
+
+  <section>
+    <h2>The store and the platform</h2>
+    <p>
+      CineDen is distributed through the Meta Horizon Store. Your purchase, payment
+      details, and store account are handled entirely by Meta, and we receive no
+      payment information. If the app verifies that your copy was purchased, that
+      check is performed by Meta's platform service and returns only whether the copy
+      is entitled. Meta's handling of that is governed by
+      <a href="https://www.meta.com/legal/privacy-policy/">Meta's privacy policy</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>
+      If CineDen ever starts collecting something, this policy will be updated before
+      that version ships, and the effective date at the top will change. Material
+      changes will also be noted in the release notes on the app's store listing.
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      Questions, corrections, or privacy requests can go to
+      <a href="mailto:CineDenDigitalGroup@gmail.com">CineDenDigitalGroup@gmail.com</a>.
+      We aim to reply within a few days.
+    </p>
+  </section>
+
+
+  <footer>
+    <div>CineDen for Plex — Privacy Policy, version 1.0, effective 10 September 2026.</div>
+    <div>
+      Not affiliated with Plex Inc. or Meta Platforms, Inc. Plex is a trademark of
+      Plex Inc.
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
