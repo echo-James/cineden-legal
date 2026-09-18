@@ -204,7 +204,7 @@
   }
 
   .claim-list li::before {
-    content: "—";
+    content: "-";
     color: var(--accent);
     font-family: "JetBrains Mono", monospace;
   }
@@ -327,8 +327,8 @@
     <div class="eyebrow">CineDen for Plex</div>
     <h1>Privacy Policy</h1>
     <div class="dateline">
-      <span>Effective 10 September 2026</span>
-      <span>Version 1.0</span>
+      <span>Effective 18 September 2026</span>
+      <span>Version 1.1</span>
     </div>
   </header>
 
@@ -402,6 +402,28 @@
             <td>To reconnect to the same server next time</td>
           </tr>
           <tr>
+            <td>PreferredServer</td>
+            <td>Which of your servers you chose</td>
+            <td>So a server that was merely asleep is not silently replaced</td>
+          </tr>
+
+          <tr>
+            <td>ChoseHomeUser</td>
+            <td>Whether you have already been asked to pick a profile</td>
+            <td>So the question is asked once rather than on every launch</td>
+          </tr>
+
+          <tr>
+            <td>LiveTvSubscription</td>
+            <td>An identifier your server issued for the tuner session</td>
+            <td>So a tuner can be handed back if the app closes mid-channel</td>
+          </tr>
+          <tr>
+            <td>LiveTvGrabOperation</td>
+            <td>An identifier for the operation holding that tuner</td>
+            <td>The same reason; this is the one that frees the hardware</td>
+          </tr>
+          <tr>
             <td>ActiveHomeUser</td>
             <td>Which Plex Home profile you picked</td>
             <td>To open in the right profile</td>
@@ -429,8 +451,8 @@
   <section>
     <h2>What leaves your headset, and where it goes</h2>
     <p>
-      CineDen talks to exactly two kinds of destination. Both are necessary for the
-      app to function, and neither is operated by us.
+      CineDen talks to three destinations. All three are necessary for the app to
+      function, and none of them is operated by us.
     </p>
 
     <div class="destinations">
@@ -467,13 +489,40 @@
         <p>
           Whichever server you sign in to, at whatever address it has. CineDen
           requests your library listings, cover artwork, and the video itself
-          directly from it, using the token above. On a home network this traffic
-          never leaves your network at all.
+          directly from it, using the token above. If your server has a TV tuner,
+          CineDen also asks it for the channel guide, and asks it to tune a channel
+          when you choose one - which claims one of that server's tuners until you
+          stop watching. On a home network this traffic never leaves your network at
+          all.
         </p>
         <p>
           Your library contents, what you watch, and how far through it you are all
           stay between your headset and your server. We are not in that path and
           cannot see any of it.
+        </p>
+      </div>
+      
+      <div class="destination">
+        <div class="host">Meta's platform service</div>
+        <p>
+          Once at launch, CineDen asks Meta whether the account signed in to the
+          headset owns a copy of the app. The Horizon Store requires this of paid
+          apps. The request is made by Meta's own platform library on the device,
+          using the store account you are already signed in to; we do not send it and
+          we do not see who you are.
+        </p>
+        <p>What comes back is one answer:</p>
+        <ul class="sends">
+          <li>entitled, or not</li>
+        </ul>
+        <p>
+          Nothing is stored as a result, and the answer is not written to your headset
+          or recorded anywhere. If the check cannot reach Meta, CineDen carries on and
+          plays normally rather than locking you out, because being offline is not
+          evidence that a copy is unlicensed. Meta's handling of the check is governed
+          by
+          <a href="https://www.meta.com/legal/privacy-policy/">Meta's privacy policy</a>,
+          not this one.
         </p>
       </div>
     </div>
@@ -551,10 +600,9 @@
     <p>
       CineDen is distributed through the Meta Horizon Store. Your purchase, payment
       details, and store account are handled entirely by Meta, and we receive no
-      payment information. If the app verifies that your copy was purchased, that
-      check is performed by Meta's platform service and returns only whether the copy
-      is entitled. Meta's handling of that is governed by
-      <a href="https://www.meta.com/legal/privacy-policy/">Meta's privacy policy</a>.
+      payment information - not your name, not your card, not your email. The app
+      does check with Meta that your copy was bought, which is described under
+      Meta's platform service above.
     </p>
   </section>
 
@@ -578,7 +626,7 @@
 
 
   <footer>
-    <div>CineDen for Plex — Privacy Policy, version 1.0, effective 10 September 2026.</div>
+    <div>CineDen for Plex - Privacy Policy, version 1.1, effective 18 September 2026.</div>
     <div>
       Not affiliated with Plex Inc. or Meta Platforms, Inc. Plex is a trademark of
       Plex Inc.
